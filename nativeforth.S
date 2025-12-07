@@ -1,33 +1,10 @@
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @
-@ Jones' Forth port for ARM EABI
-@ Copyright (C) 2013 M2IHP'13 class, see AUTHORS for the full list of
-@ contributors.
-@
-@ Original x86 and forth code: Richard W.M. Jones <rich@annexia.org>
-@
-@ The extensive comments from Jones' x86 version have been removed.  You should
-@ check them out, they are really detailed, well written and pedagogical.
-@
-@ The DIVMOD routine is taken from the ARM Software Development Toolkit User
-@ Guide 2.50.
-@
-@ This program is free software: you can redistribute it and/or modify it under
-@ the terms of the GNU Lesser General Public License as published by the Free
-@ Software Foundation, either version 3 of the License, or (at your option) any
-@ later version.
-@
-@ This program is distributed in the hope that it will be useful, but WITHOUT
-@ ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-@ FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more
-@ details.
-@
-@ You should have received a copy of the GNU Lesser General Public License
-@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+@ Henry-Native Forth for ARM EABI
 @
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-        .set JONES_VERSION,47
+        .set HENRY_VERSION,47
         #include <asm/unistd.h>
 
 @ Reserve three special registers:
@@ -623,7 +600,7 @@ defcode "CMOVE",5,,CMOVE
         defvar "S0",2,,SZ
         defvar "BASE",4,,BASE,10
 
-        defconst "VERSION",7,,VERSION,JONES_VERSION
+        defconst "VERSION",7,,VERSION,HENRY_VERSION
         defconst "R0",2,,RZ,return_stack_top
         defconst "DOCOL",5,,__DOCOL,DOCOL
         defconst "F_IMMED",7,,__F_IMMED,F_IMMED
